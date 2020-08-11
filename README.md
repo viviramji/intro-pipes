@@ -1,27 +1,61 @@
-# PipesIntro
+# Pipes Intro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+Como su nombre lo indica funcionan como una tubería donde se transforma el dato recibido por otro (*solo visualmente, no existe mutación ni cambios en el valor original*) y depende de la lógica de cada Pipe. 
 
-## Development server
+## Pipes nativos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Pipes uppercase y lowercase
+* Pipe Slice
+* Pice Decimal
+* Pipe Percent
+* Pipe Currency
+* Pipe Json
+* Pipe Async
+* Pipe Date
 
-## Code scaffolding
+Y por otro lado pipes personalizados.
+los pipes personalizados se pueden crear a través del CLI de angular usando el siguiente comando 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+$ ng g p [path]/pipe-name
+```
 
-## Build
+## Los pipes personalizados
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Los pipe utilizan el decorador con el mismo nombre y con la propiedad name se identifican para ser utilizados en el HTML
 
-## Running unit tests
+```
+@Pipe({
+  name: 'myOwnPipe'
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usos
 
-## Running end-to-end tests
+```
+<p>{{ variable | uppercase}}</p>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+*Tranforma el valor de la variable en mayúsculas*
 
-## Further help
+```
+<p>{{ variable | slice : 0 : 20}}</p>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+*Muestra la candena original desde el carácter en la posición 0 hasta el carácter en la posición 20*
+
+Documentación oficial
+
+- [AsyncPipe](https://angular.io/api/common/AsyncPipe)
+- [DecimalPipe](https://angular.io/api/common/DecimalPipe)
+- [PercentPipe](https://angular.io/api/common/PercentPipe)
+- [DatePipe](https://angular.io/api/common/DatePipe)
+- [TitleCasePipe](https://angular.io/api/common/TitleCasePipe)
+- [UpperCasePipe](https://angular.io/api/common/UpperCasePipe)
+- [CurrencyPipe](https://angular.io/api/common/CurrencyPipe)
+- [I18nPluralPipe](https://angular.io/api/common/I18nPluralPipe)
+- [I18nSelectPipe](https://angular.io/api/common/I18nSelectPipe)
+- [JsonPipe](https://angular.io/api/common/JsonPipe)
+- [KeyValuePipe](https://angular.io/api/common/KeyValuePipe)
+- [SlicePipe](https://angular.io/api/common/SlicePipe)
+- [LowerCasePipe](https://angular.io/api/common/LowerCasePipe)
