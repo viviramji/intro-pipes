@@ -10,18 +10,79 @@
     </tr>
   </thead>
   <tbody>
-    
+
     <tr>
       <th>{{ name }}</th>
       <td>Uppercase</td>
       <td>{{ name | uppercase }}</td>
     </tr>
-    
+
     <tr>
       <th>{{ name }}</th>
       <td>Lowercase</td>
       <td>{{ name | lowercase }}</td>
     </tr>
 
+    <tr>
+      <th>{{ name }}</th>
+      <td>Slice : 0:3 </td>
+      <td>{{ name | slice: 0:3 }}</td>
+    </tr>
+
+    <tr>
+      <th>Array {{ arrayNumbers }}</th>
+      <td>Slice : 4:6 </td>
+      <td>{{ arrayNumbers | slice: 4:6 }}</td>
+    </tr>
+
+    <tr>
+      <th>PI: {{ PI }}</th>
+      <td>Number: '1.0-4' </td>
+      <td>{{ PI | number: '1.0-4' }}</td>
+    </tr>
+
+    <tr>
+      <th>PI: {{ PI }}</th>
+      <td>Number: '.0-4' </td>
+      <td>{{ PI | number: '.0-4' }}</td>
+    </tr>
+
+    <tr>
+      <th>Percent: {{ percent }}</th>
+      <td>Percent </td>
+      <td>{{ percent | percent }}</td>
+    </tr>
+
+    <tr>
+      <th>Percent: {{ percent }}</th>
+      <td>Percent: '2.2-2'  </td>
+      <td>{{ percent | percent: '2.2-2' }}</td>
+    </tr>
+
+    <tr>
+      <th>{{ promiseValue }}</th>
+      <td>Promise</td>
+      <td>{{ promiseValue | async }}</td>
+    </tr>
+
+
   </tbody>
 </table>
+
+<h3>Slice</h3>
+<ul>
+  <li *ngFor="let i of arrayNumbers | slice: 5:20"> {{i}} </li>
+</ul>
+
+
+<h3> Json</h3>
+
+<div class="row mb-6">
+  <div class="col">
+
+    <pre>
+      {{ persona | json }}
+    </pre>
+
+  </div>
+</div>
